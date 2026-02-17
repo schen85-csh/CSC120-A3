@@ -12,7 +12,7 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 ### Level 1 (4 pts)
 
-_____ 1 pt: `reflection.md` lists the classmates you consulted & TA hours attended
+___yes__ 1 pt: `reflection.md` lists the classmates you consulted & TA hours attended
 
 ___yes__ 1 pt: Program queries user for number of conversation rounds
 

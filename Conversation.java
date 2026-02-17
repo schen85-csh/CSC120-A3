@@ -35,20 +35,20 @@ class Conversation implements ConversationRequirements {
     /** loop until reaching the round number.
      */
     for (int i = 0; i < round; i++){
-      /* get users' words */
+      /** get users' words */
       String userInput = inputReader.nextLine();
       /* record users' words */
       transcript.add(userInput);
-      /*in each round, use respond function that I wrote below to either getting a mirror response or getting a random response.  */
+      /** in each round, use respond function that I wrote below to either getting a mirror response or getting a random response.  */
       String answer = respond(userInput);
       System.out.println(answer);
-      /* record */
+      /** record */
       transcript.add(answer);
     }
-    /* after reaching the round number, print goodbye message. */
+    /** after reaching the round number, print goodbye message. */
     String goodbye = "See ya!";
     System.out.println(goodbye);
-    /*record goodbye message. */
+    /**record goodbye message. */
     transcript.add(goodbye);
   }
 
@@ -69,14 +69,14 @@ class Conversation implements ConversationRequirements {
    * @return mirrored or canned response to user input  
    */
   public String respond(String inputString) {
-    /*create a string variable to catch the return massage. */
+    /** create a string variable to catch the return massage. */
     String returnString = "";
-    /* divide users' sentence by space, so each element of String[] is a word. */
+    /** divide users' sentence by space, so each element of String[] is a word. */
     String[] words = inputString.split(" ");
-    /* creat a boolean variable to help decide what kind of message should we return(mirror/random) */
+    /** creat a boolean variable to help decide what kind of message should we return(mirror/random) */
     boolean change = false;
-    /*go through each word of users' sentence, and detect the words that need to be changed, and then change them.
-    If the words are changeed, change the boolean value. */
+    /** go through each word of users' sentence, and detect the words that need to be changed, and then change them.
+     * If the words are changeed, change the boolean value. */
     for (int i = 0; i < words.length; i++){
       if (words[i].equals("I")){
         words[i] = "you";
@@ -107,12 +107,16 @@ class Conversation implements ConversationRequirements {
         change = true;
       }
     }
-    /*if the words in user's sentence are changed, join the spilt words by space and return the mirror message. */
+    /** if the words in user's sentence are changed, join the spilt words by space and return the mirror message. */
     if (change){
-      returnString = String.join(" ", words)+"?";
-      return returnString; 
+      int len = words.length;
+      String lastElement = words[len-1];
+      /** need to add an if code to remove the last "." in the arraylist */
+      returnString = String.join(" ", words) + "?";
+      return returnString;
+    
     }
-    /*if the words are not changed, return a random message. */
+    /** if the words are not changed, return a random message. */
     else{
       int randomIndex = random.nextInt(response.length);
       returnString = response[randomIndex];

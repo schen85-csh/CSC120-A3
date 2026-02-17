@@ -1,7 +1,7 @@
 Use this file to record your reflection on this assignment.
 
 - Which classmates did you consult with while working on this assignment?
-I talked to Michaela Opdahl and Yushan He.
+I talked to Michaela Opdahl, Yushan He and some classmates from another section: May Liang and Ivy Zhao.
 
 - Which session(s) of TA / office hours did you attend?
 I had a discussion about this homework with professor Hia about ten minutes after Tuesday's class.
