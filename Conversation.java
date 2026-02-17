@@ -82,6 +82,10 @@ class Conversation implements ConversationRequirements {
         words[i] = "you";
         change = true;
       }
+      else if (words[i].equals("i")){
+        words[i] = "you";
+        change = true;
+      }
       else if (words[i].equals("me")){
         words[i] = "you";
         change = true;
