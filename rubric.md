@@ -66,4 +66,4 @@ ___yes__ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
 ___yes__ 1 pt: All required files included with submission (including completed checklist file)
 
-_____ 1 pt: `reflection.md` contains your reflection on the assignment
+___yes__ 1 pt: `reflection.md` contains your reflection on the assignment

@@ -27,18 +27,28 @@ class Conversation implements ConversationRequirements {
    * Starts and runs the conversation with the user
    */
   public void chat() {
+    /** The default start of conversasion. */
     String greeting = "Hi there! What's in your mind?";
     System.out.println(greeting);
+    /** record the start sentence in the transcript. */
     transcript.add(greeting);
+    /** loop until reaching the round number.
+     */
     for (int i = 0; i < round; i++){
+      /* get users' words */
       String userInput = inputReader.nextLine();
+      /* record users' words */
       transcript.add(userInput);
+      /*in each round, use respond function that I wrote below to either getting a mirror response or getting a random response.  */
       String answer = respond(userInput);
       System.out.println(answer);
+      /* record */
       transcript.add(answer);
     }
+    /* after reaching the round number, print goodbye message. */
     String goodbye = "See ya!";
     System.out.println(goodbye);
+    /*record goodbye message. */
     transcript.add(goodbye);
   }
 
@@ -59,9 +69,14 @@ class Conversation implements ConversationRequirements {
    * @return mirrored or canned response to user input  
    */
   public String respond(String inputString) {
+    /*create a string variable to catch the return massage. */
     String returnString = "";
+    /* divide users' sentence by space, so each element of String[] is a word. */
     String[] words = inputString.split(" ");
+    /* creat a boolean variable to help decide what kind of message should we return(mirror/random) */
     boolean change = false;
+    /*go through each word of users' sentence, and detect the words that need to be changed, and then change them.
+    If the words are changeed, change the boolean value. */
     for (int i = 0; i < words.length; i++){
       if (words[i].equals("I")){
         words[i] = "you";
@@ -88,10 +103,12 @@ class Conversation implements ConversationRequirements {
         change = true;
       }
     }
+    /*if the words in user's sentence are changed, join the spilt words by space and return the mirror message. */
     if (change){
       returnString = String.join(" ", words)+"?";
       return returnString; 
     }
+    /*if the words are not changed, return a random message. */
     else{
       int randomIndex = random.nextInt(response.length);
       returnString = response[randomIndex];
